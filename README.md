@@ -12,6 +12,6 @@ Running with the follwing parameters:
 
 --snapshot ./eos-snapshot-files/final/1/snapshot.csv --snapshot-hash 6df61f12f96f89c907fac14a021d788c9e77098952a6c5494c7999d2e79d0a35 --currency-check "10000000000.0000 EOS" --check-accounts --num-threads 8
 
-And Referecing snapshow.csv from https://raw.githubusercontent.com/eosphere/eos-snapshot-files/master/final/1/snapshot.csv
+And Referecing snapshot.csv from https://raw.githubusercontent.com/eosphere/eos-snapshot-files/master/final/1/snapshot.csv
 
 
