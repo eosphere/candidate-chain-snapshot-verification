@@ -1,0 +1,84 @@
+:~/firestarter/validator$ cleos -u http://127.0.0.1:8888 get block 14790
+{
+  "timestamp": "2018-06-10T04:07:16.000",
+  "producer": "genesisblock",
+  "confirmed": 0,
+  "previous": "000039c52d20aae07ffd729e082800385725f7d467e4629dc88960933265acb7",
+  "transaction_mroot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "action_mroot": "cd36742bdc5cd8358340a2a3c3c3b1266235c865190faca73fedcf7d69a5119f",
+  "schedule_version": 1,
+  "new_producers": null,
+  "header_extensions": [],
+  "producer_signature": "SIG_K1_Jw82CYnJKwM1Rxmq42eSt9W5TH5H7WDyk3GydVFgS2RxKUMffvKdd16YRApCKgdQiXCWpWB4dQ3EiwTYoJHTFmBhb5sUdr",
+  "transactions": [],
+  "block_extensions": [],
+  "id": "000039c6db30e9e00fd8f2328c73f81e42b5690d0a42c2d7a1640910688baa47",
+  "block_num": 14790,
+  "ref_block_prefix": 854775823
+}
+~/firestarter/validator$ ./validate_chain_at_block.sh --network=aca376-eosphere --block=000039c6db30e9e00fd8f2328c73f81e42b5690d0a42c2d7a1640910688baa47
+Waiting for snapshot to be taken ........ (please wait)
+3070687ms thread-0   chain_plugin.cpp:206          plugin_initialize    ] initializing chain plugin
+3070687ms thread-0   chain_plugin.cpp:365          plugin_initialize    ] Using genesis state provided in '/home/ubuntu/firestarter/validator/aca376-eosphere/genesis.json'
+3070687ms thread-0   chain_plugin.cpp:371          plugin_initialize    ] Starting up fresh blockchain with provided genesis state.
+CHAINBASE:   Failed to pin chainbase shared memory (of size 1024 MB) in RAM. Performance degradation is possible.
+CHAINBASE:   Failed to pin chainbase shared memory (of size 340 MB) in RAM. Performance degradation is possible.
+3070705ms thread-0   http_plugin.cpp:285           plugin_initialize    ] configured http to listen on 127.0.0.1:9998
+3070705ms thread-0   net_plugin.cpp:2840           plugin_initialize    ] Initialize net plugin
+3070705ms thread-0   net_plugin.cpp:2861           plugin_initialize    ] host: 127.0.0.1 port: 9999
+3070705ms thread-0   net_plugin.cpp:2933           plugin_initialize    ] my node_id is 45ed58216a55c9b0a3107592852626fb6edf09811a14b4920e6f9ec93c66ddfb
+3070705ms thread-0   producer_plugin.cpp:508       plugin_initialize    ] "private-key" is DEPRECATED, use "signature-provider=EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:***************************************************"
+3070705ms thread-0   main.cpp:104                  main                 ] nodeos version 1055065d
+3070705ms thread-0   main.cpp:105                  main                 ] eosio root is /home/ubuntu/.local/share
+3070705ms thread-0   controller.cpp:1180           startup              ] No head block in fork db, perhaps we need to replay
+3070705ms thread-0   controller.cpp:307            initialize_fork_db   ]  Initializing new blockchain with genesis state
+3070742ms thread-0   chain_plugin.cpp:436          plugin_startup       ] starting chain in read/write mode
+3070742ms thread-0   chain_plugin.cpp:441          plugin_startup       ] Blockchain started; head block is #1, genesis timestamp is 2018-06-08T08:08:08.888
+3070742ms thread-0   http_plugin.cpp:323           plugin_startup       ] start listening for http requests
+3070742ms thread-0   net_plugin.cpp:2945           plugin_startup       ] starting listener, max clients is 25
+3070749ms thread-0   net_plugin.cpp:695            connection           ] created connection to 127.0.0.1:9876
+3070749ms thread-0   net_plugin.cpp:1915           connect              ] host: 127.0.0.1 port: 9876
+3070750ms thread-0   producer_plugin.cpp:577       plugin_startup       ] producer plugin:  plugin_startup() begin
+3070750ms thread-0   producer_plugin.cpp:604       plugin_startup       ] producer plugin:  plugin_startup() end
+3131464ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block ddc03486114e6a1c... #1000 @ 2018-06-09T12:06:33.000 signed by eosio [trxs: 1, lib: 999, conf: 0, latency: 60338464 ms]
+3242154ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 206e680a75958c81... #2000 @ 2018-06-09T12:14:53.000 signed by eosio [trxs: 1, lib: 1999, conf: 0, latency: 59949154 ms]
+3355143ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 3755ae4c7e9c5751... #3000 @ 2018-06-09T12:23:13.500 signed by eosio [trxs: 1, lib: 2999, conf: 0, latency: 59561643 ms]
+3468330ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block b7540f01a5ff33f0... #4000 @ 2018-06-09T12:31:34.500 signed by eosio [trxs: 0, lib: 3999, conf: 0, latency: 59173830 ms]
+3582270ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 12f946a622b2c4b1... #5000 @ 2018-06-09T12:39:58.000 signed by eosio [trxs: 0, lib: 4999, conf: 0, latency: 58784270 ms]
+98427ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 3149d3d5335a0f28... #6000 @ 2018-06-09T12:48:19.500 signed by eosio [trxs: 0, lib: 5999, conf: 0, latency: 58398927 ms]
+215414ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 9c3f8adaefe5c21f... #7000 @ 2018-06-09T12:56:41.000 signed by eosio [trxs: 0, lib: 6999, conf: 0, latency: 58014414 ms]
+334330ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 773442461081ec11... #8000 @ 2018-06-09T13:05:06.000 signed by eosio [trxs: 0, lib: 7999, conf: 0, latency: 57628330 ms]
+449010ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 39ada06c226c6fa5... #9000 @ 2018-06-09T13:13:26.500 signed by eosio [trxs: 1, lib: 8999, conf: 0, latency: 57242510 ms]
+504538ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 2a47393efa1d0575... #10000 @ 2018-06-09T13:44:34.500 signed by eosio [trxs: 14, lib: 9999, conf: 0, latency: 55430038 ms]
+532906ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 2b15bc67f9e54ed4... #11000 @ 2018-06-09T13:52:56.000 signed by eosio [trxs: 0, lib: 10999, conf: 0, latency: 54956906 ms]
+537900ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 0b5b84acb6719e8f... #12000 @ 2018-06-09T14:13:14.000 signed by eosio [trxs: 1, lib: 11999, conf: 0, latency: 53743900 ms]
+538066ms thread-0   controller.cpp:753            start_block          ] promoting proposed schedule (set in block 12148) to pending; current block: 12149 lib: 12148 schedule: {"version":1,"producers":[{"producer_name":"genesisblock","block_signing_key":"EOS8Yid3mE5bwWMvGGKYEDxFRGHostu5xCzFanyJP1UdgZ5mpPdwZ"}]}
+538067ms thread-0   controller.cpp:753            start_block          ] promoting proposed schedule (set in block 12148) to pending; current block: 12149 lib: 12148 schedule: {"version":1,"producers":[{"producer_name":"genesisblock","block_signing_key":"EOS8Yid3mE5bwWMvGGKYEDxFRGHostu5xCzFanyJP1UdgZ5mpPdwZ"}]}
+539268ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block f4ab4eadc2599834... #13000 @ 2018-06-09T15:58:39.500 signed by genesisblock [trxs: 0, lib: 12999, conf: 0, latency: 47419768 ms]
+540742ms thread-0   producer_plugin.cpp:290       on_incoming_block    ] Received block 764dcdecebd73c55... #14000 @ 2018-06-10T03:35:13.500 signed by genesisblock [trxs: 0, lib: 13999, conf: 0, latency: 5627242 ms]
+541897ms thread-0   snapshot_plugin.cpp:89        operator()           ] Taking snapshot at block 14790 (000039c6db30e9e00fd8f2328c73f81e42b5690d0a42c2d7a1640910688baa47)...
+543153ms thread-0   snapshot_plugin.cpp:138       operator()           ] Snapshot saved in /home/ubuntu/firestarter/validator/aca376-eosphere/files/snapshot.bin
+543153ms thread-0   snapshot_plugin.cpp:138       operator()           ] Snapshot saved in /home/ubuntu/firestarter/validator/aca376-eosphere/files/snapshot.bin
+543156ms thread-0   net_plugin.cpp:2972           plugin_shutdown      ] shutdown..
+543156ms thread-0   net_plugin.cpp:2975           plugin_shutdown      ] close acceptor
+543156ms thread-0   net_plugin.cpp:2978           plugin_shutdown      ] close 1 connections
+543156ms thread-0   net_plugin.cpp:2986           plugin_shutdown      ] exit shutdown
+543156ms thread-0   fork_database.cpp:93          close                ] num_blocks_in_fork_db: 2
+543156ms thread-0   controller.cpp:261            ~controller_impl     ] db.revision(): 14791 head->block_num: 14791 blog.read_head()->block_num(): 14790
+543231ms thread-0   net_plugin.cpp:727            ~connection          ] released connection to server at 127.0.0.1:9876
+Snapshot saved in /home/ubuntu/firestarter/validator/aca376-eosphere/files/snapshot.bin
+Converting snapshot to json ...
+Validating EOS blockchain snapshot against "EOS Vanilla validator (v0.1)"
+Loading EOS snapshot                             OK
+Loading ETH snapshot                             OK
+Load EOS genesis                                 OK
+Validating genesis                               OK
+Verifying global params vs genesis               OK
+Verifying user account creation                  OK
+Verifying user account stake                     OK
+Verifying user account code                      OK
+Verifying user account permission                OK
+Verifying privileged accounts                    OK
+Verifying extra accounts                         FAIL
+** > Extra account found eosio.unregd
+** > Extra account found genesisblock
